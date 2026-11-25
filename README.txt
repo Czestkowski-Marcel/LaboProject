@@ -56,5 +56,31 @@ Podział zadań:
 Sposób kontaktu: Bieżąca komunikacja za pośrednictwem platformy LaboChat.com oraz szybkie konsultacje na [np. Discord / Messenger].
 Zasada zapisywania i aktualizowania ustaleń: Wszystkie kluczowe decyzje projektowe oraz zadania zapisujemy w przestrzeni zespołu na LaboChat.com. Wszelkie zmiany w dokumentacji i kodzie wprowadzamy przez repozytorium GitHub, opisując każdy commit w sposób jasno wskazujący, co zostało dodane lub poprawione.
 Odnośniki
-Repozytorium GitHub: [Wklej link, np. https://github.com/twoj-login/medislot]
-Przestrzeń projektu w LaboChat.com: [Wklej link do przestrzeni zespołu na LaboChat.com]
+Repozytorium GitHub: https://github.com/Czestkowski-Marcel/LaboProject
+Przestrzeń projektu w LaboChat.com: 
+
+## Dokumentacja projektu
+* [Road Map v1](docs/roadmap-v1.md)
+* [Wybrane technologie](docs/technologie.md)
+* [Prompty i decyzje v1](docs/prompty-v1.md)
+* [Plan i wyniki testów v1](docs/testy-v1.md)
+
+## Uruchomienie aplikacji lokalnie (v1)
+
+### Wymagania
+* Python 3.10 lub nowszy
+
+### Krok po kroku — Windows (PowerShell)
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe init_db.py
+.\.venv\Scripts\python.exe -m flask --app app run
+
+Krok po kroku — macOS / Linux
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python init_db.py
+.venv/bin/python -m flask --app app run
+
+Po uruchomieniu otwórz w przeglądarce adres: http://127.0.0.1:5000
