@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Logowanie (W00)</h2>
+    <p><small>Konto demonstracyjne: <strong>jan@medislot.pl</strong> / hasło: <strong>haslo123</strong></small></p>
+    <form method="POST">
+        <input type="hidden" name="akcja" value="logowanie">
+        <label>Adres e-mail:</label>
+        <input type="email" name="email" required placeholder="np. jan@medislot.pl">
+        <label>Hasło:</label>
+        <input type="password" name="haslo" required>
+        <button type="submit">Zaloguj się</button>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Rejestracja nowego pacjenta (W00)</h2>
+    <form method="POST">
+        <input type="hidden" name="akcja" value="rejestracja">
+        <label>Imię i nazwisko:</label>
+        <input type="text" name="imie_nazwisko" required placeholder="np. Anna Nowak">
+        <label>Adres e-mail:</label>
+        <input type="email" name="email" required placeholder="np. anna@example.com">
+        <label>Hasło:</label>
+        <input type="password" name="haslo" required>
+        <button type="submit">Załóż konto</button>
+    </form>
+</div>
+{% endblock %}

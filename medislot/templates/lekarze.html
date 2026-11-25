@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Lista lekarzy i cennik (W01)</h2>
+    {% if lekarze %}
+    <table>
+        <thead>
+            <tr>
+                <th>Lekarz</th>
+                <th>Specjalizacja</th>
+                <th>Kwota wizyty</th>
+                <th>Akcja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in lekarze %}
+            <tr>
+                <td>{{ l.imie_nazwisko }}</td>
+                <td>{{ l.specjalizacja }}</td>
+                <td><strong>{{ "%.2f"|format(l.kwota_wizyty) }} zł</strong></td>
+                <td><a class="btn" href="{{ url_for('lekarze', lekarz_id=l.id) }}">Pokaż terminy</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Brak dostępnych lekarzy w systemie.</p>
+    {% endif %}
+</div>
+
+{% if wybrany_lekarz %}
+<div class="card">
+    <h3>Wolne terminy: {{ wybrany_lekarz.imie_nazwisko }} ({{ wybrany_lekarz.specjalizacja }}) — {{ "%.2f"|format(wybrany_lekarz.kwota_wizyty) }} zł</h3>
+    {% if wolne_terminy %}
+    <table>
+        <thead>
+            <tr>
+                <th>Data i godzina</th>
+                <th>Kwota</th>
+                <th>Rezerwacja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in wolne_terminy %}
+            <tr>
+                <td>{{ t.data_godzina }}</td>
+                <td>{{ "%.2f"|format(wybrany_lekarz.kwota_wizyty) }} zł</td>
+                <td>
+                    <form method="POST" action="{{ url_for('rezerwuj') }}" style="margin:0;">
+                        <input type="hidden" name="termin_id" value="{{ t.id }}">
+                        <button type="submit">Zarezerwuj</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Brak wolnych terminów dla wybranego lekarza.</p>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

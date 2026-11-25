@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Moje wizyty (W02)</h2>
+    {% if wizyty %}
+    <table>
+        <thead>
+            <tr>
+                <th>Data i godzina</th>
+                <th>Lekarz i specjalizacja</th>
+                <th>Kwota</th>
+                <th>Status</th>
+                <th>Akcja</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for w in wizyty %}
+            <tr>
+                <td>{{ w.data_godzina }}</td>
+                <td>{{ w.lekarz_nazwa }} ({{ w.specjalizacja }})</td>
+                <td><strong>{{ "%.2f"|format(w.kwota_zapisana) }} zł</strong></td>
+                <td>{{ w.status }}</td>
+                <td>
+                    {% if w.status == 'Zarezerwowana' %}
+                    <form method="POST" action="{{ url_for('anuluj', wizyta_id=w.id) }}" style="margin:0;">
+                        <button type="submit" class="btn-danger">Anuluj wizytę</button>
+                    </form>
+                    {% else %}
+                        —
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Nie masz jeszcze żadnych zapisanych wizyt. Przejdź do zakładki <a href="{{ url_for('lekarze') }}">Lekarze i terminy</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}
