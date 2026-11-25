@@ -60,10 +60,10 @@ Repozytorium GitHub: https://github.com/Czestkowski-Marcel/LaboProject
 Przestrzeń projektu w LaboChat.com: 
 
 ## Dokumentacja projektu
-* [Road Map v1](docs/roadmap-v1.md)
-* [Wybrane technologie](docs/technologie.md)
-* [Prompty i decyzje v1](docs/prompty-v1.md)
-* [Plan i wyniki testów v1](docs/testy-v1.md)
+* [Road Map v1](medislot/docs/roadmap-v1.md)
+* [Wybrane technologie](medislot/docs/technologie.md)
+* [Prompty i decyzje v1](medislot/docs/prompty-v1.md)
+* [Plan i wyniki testów v1](medislot/docs/testy-v1.md)
 
 ## Uruchomienie aplikacji lokalnie (v1)
 
