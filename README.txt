@@ -2,7 +2,7 @@ MediSlot – system rezerwacji wizyt lekarskich i zarządzania harmonogramem pac
 Zespół
 Nazwa zespołu: CodeMed
 Osoba 1: Bartłomiej Milinkiewicz, nr indeksu: 180600, GitHub: @Milin600
-Osoba 2: [Imię i Nazwisko], nr indeksu: [numer], GitHub: [@login_github]
+Osoba 2: Marcel Czestkowski, nr indeksu: 180583, GitHub: @czestkowski-marcel
 Grupa laboratoryjna: I IO
 
 Idea i problem
